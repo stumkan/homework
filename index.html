@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brain Boost Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <noscript><p class="noscript">This quiz needs JavaScript. Please turn it on and refresh the page.</p></noscript>
+
+  <!-- Login -->
+  <main id="login-view" class="login" hidden>
+    <form id="login-form" class="login-card" autocomplete="off" novalidate>
+      <div class="mascot" aria-hidden="true">🦉</div>
+      <h1>Brain Boost Quiz</h1>
+      <p class="welcome">Hello, superstar! Type your name and the secret password to start.</p>
+      <label for="name">Your name</label>
+      <input id="name" type="text" maxlength="30" placeholder="Type your name" autocomplete="off">
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Type the password" autocomplete="off">
+      <p id="login-error" class="login-error" role="alert"></p>
+      <button class="btn big" type="submit">Let's go!</button>
+    </form>
+  </main>
+
+  <!-- App -->
+  <div id="app-view" data-subject="english" hidden>
+    <header class="top">
+      <div class="who">Hi, <span id="user-name"></span>! 👋</div>
+      <div id="score-badge" class="score" aria-live="polite" title="Your total points">
+        <span class="star" aria-hidden="true">⭐</span>
+        <span><span id="global-score">0</span> points</span>
+      </div>
+      <button id="logout" class="btn small ghost" type="button">Switch User</button>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Subjects">
+      <button class="tab" role="tab" data-subject="english" type="button">📚 English</button>
+      <button class="tab" role="tab" data-subject="maths" type="button">🔢 Maths</button>
+      <button class="tab" role="tab" data-subject="afrikaans" type="button">🦁 Afrikaans</button>
+    </nav>
+
+    <main id="stage" class="stage"></main>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
